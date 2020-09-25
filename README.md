@@ -10,4 +10,4 @@
 
 
 # Bagan Map Web Application
-## Website Portan and Back-End
+## Website Portal and Back-End
