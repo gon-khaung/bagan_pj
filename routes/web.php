@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('index');
+})->name('welcome');
 
+
+// admin dashboard
 //chart
 Route::get('/chart_chartist', 'BackendController@chart_chartist')->name('chart_chartist');
 Route::get('/chart_chartjs', 'BackendController@chart_chartjs')->name('chart_chartjs');
@@ -89,3 +91,12 @@ Route::get('/blank', 'BackendController@blank')->name('blank');
 Route::get('/table_basic', 'BackendController@table_basic')->name('table_basic');
 Route::get('/table_datatable', 'BackendController@table_datatable')->name('table_datatable');
 Route::get('/widgets', 'BackendController@widgets')->name('widgets');
+// admin dashboard end
+
+// front-end
+Route::get('/index', function () {
+    return view('frontend.index');
+})->name('index');
+
+
+// front-end
