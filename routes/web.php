@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +100,14 @@ Route::get('/widgets', 'BackendController@widgets')->name('widgets');
 Route::get('/index', function () {
     return view('frontend.index');
 })->name('index');
-
+Route::get('/pagodas', 'FrontendController@pagodas')->name('pagodas');
+Route::get('/hotels', 'FrontendController@hotels')->name('hotels');
+Route::get('/pagoda_solo', 'FrontendController@pagoda_solo')->name('pagoda_solo');
+Route::get('/hotel_solo', 'FrontendController@hotel_solo')->name('hotel_solo');
+Route::get('/about', 'FrontendController@about')->name('about');
+Route::get('/articles', 'FrontendController@articles')->name('articles');
 
 // front-end
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

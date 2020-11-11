@@ -4,16 +4,19 @@
 <head>
 	<title>Bagan Map</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="./frontend/Bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./frontend/fontawesome/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="./frontend/custom.css">
-	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<!-- MDB icon -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/all.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/mdb.min.css') }}">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<!-- Google Fonts Roboto -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 	<!-- Google Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-	<!-- Bootstrap core CSS -->
-	<link href="./frontend/MDB/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Material Design Bootstrap -->
-	<link href="./frontend/MDB/css/mdb.min.css" rel="stylesheet">
+
+
 
 </head>
 
@@ -24,43 +27,39 @@
 	<div class="header">
 		<!--Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-fixed-top">
-			<a href="" class="navbar-brand" >
-				<img src="images/logo1.png" class="img-fluid logo_image">
-				</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333"
-				aria-expanded="false" aria-label="Toggle navigation">
+			<a href="" class="navbar-brand">
+				<img src="{{ asset('images/frontend/logo1.png') }}" class="img-fluid logo_image">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon" style="color:#52d2b4;"><i class="fas fa-bars"></i></span>
 			</button>
 
 			<div class="collapse navbar-collapse navItem" id="navbarSupportedContent-333">
 				<ul class="navbar-nav mr-auto itemNav">
 					<li class="nav-item active">
-						<a class="nav-link" href="index.html" style="color:white">Home
+						<a class="nav-link" href="{{ route('index') }}" style="color:white">Home
 							<span class="sr-only">(current)</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="pagoda.html" style="color:white">Pagodas List</a>
+						<a class="nav-link" href="{{ route('pagodas') }}" style="color:white">Pagodas List</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="hotel.html" style="color:white">Hotel List</a>
+						<a class="nav-link" href="{{ route('hotels') }}" style="color:white">Hotel List</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">More
+						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More
 						</a>
 						<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-							<a class="dropdown-item" href="about.html">About Bagan</a>
-							<a class="dropdown-item" href="privacy.html">Privacy</a>
-							<a class="dropdown-item" href="article.html">Article</a>
+							<a class="dropdown-item" href="{{ route('about') }}">About Bagan</a>
+							<a class="dropdown-item" href="{{ route('about') }}">Privacy</a>
+							<a class="dropdown-item" href="{{ route('articles') }}">Article</a>
 						</div>
 					</li>
 				</ul>
 				<ul class="navbar-nav ml-auto nav-flex-icons">
 					<li class="nav-item dropdown">
-						<a class="nav-link" id="navbarDropdownMenuLink-333" aria-haspopup="true" aria-expanded="false"
-							data-toggle="modal" data-target="#modalLoginForm">
+						<a class="nav-link" id="navbarDropdownMenuLink-333" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#modalLoginForm">
 							<i class="fas fa-user-cog"></i>
 						</a>
 					</li>
@@ -72,8 +71,7 @@
 	</div>
 	<!-- End -->
 	<!-- admin sign in panel -->
-	<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-		aria-hidden="true">
+	<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header text-center">
@@ -104,7 +102,7 @@
 	</div>
 	<!-- end admin sign in panel -->
 
-@yield('content');
+	@yield('content');
 
 	<!-- Footer -->
 	<footer class="page-footer font-small" style="background-color:  #2d2e33;">
@@ -145,35 +143,30 @@
 				<div class="row">
 					<div class="col-md-6 my-3">
 
-						<img src="images/contact.png" width="100%">
+						<img src="{{ asset('images/frontend/contact.png') }}" width=" 100%">
 
 					</div>
 					<div class="col-md-6 my-3">
 						<form>
 							<div class="form-group">
 								<!-- <label for="formGroupExampleInput">Example label</label> -->
-								<input type="text" class="form-control" id="formGroupExampleInput"
-									placeholder="Enter Your Name">
+								<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Name">
 							</div>
 							<div class="form-group">
 								<!-- <label for="formGroupExampleInput2">Another label</label> -->
-								<input type="text" class="form-control" id="formGroupExampleInput2"
-									placeholder="Enter Your Email">
+								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Email">
 							</div>
 							<div class="form-group">
 								<!-- <label for="formGroupExampleInput2">Another label</label> -->
-								<input type="text" class="form-control" id="formGroupExampleInput2"
-									placeholder="Telephone">
+								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Telephone">
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleFormControlTextarea1">Comment</label> -->
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-									placeholder="Enter Your Address"></textarea>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Address"></textarea>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleFormControlTextarea1">Comment</label> -->
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-									placeholder="Message"></textarea>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
 							</div>
 							<button type="submit" class="btn btn-primary">Send Message</button>
 						</form>
@@ -245,24 +238,25 @@
 
 
 </body>
-<script type="text/javascript" src="./frontend/Bootstrap/js/jquery.min.js"></script>
-<script type="text/javascript" src="./frontend/Bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- JQuery -->
-<script type="text/javascript" src="./frontend/MDB/js/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
 <!-- Bootstrap tooltips -->
-<script type="text/javascript" src="./frontend/MDB/js/popper.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/popper.min.js') }}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="./frontend/MDB/js/mdb.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/mdb.min.js') }}"></script>
+
 
 <script>
-	$(function () {
+	$(function() {
 		var selectedClass = "";
-		$(".filter").click(function () {
+		$(".filter").click(function() {
 			selectedClass = $(this).attr("data-rel");
 			$("#gallery").fadeTo(100, 0.1);
 			$("#gallery div").not("." + selectedClass).fadeOut().removeClass('animation');
-			setTimeout(function () {
+			setTimeout(function() {
 				$("." + selectedClass).fadeIn().addClass('animation');
 				$("#gallery").fadeTo(300, 1);
 			}, 300);
@@ -270,12 +264,11 @@
 	});
 
 	// scroll animation
-	$(document).ready(function () {
+	$(document).ready(function() {
 		new WOW().init();
 	});
 	$(".wow").addClass("fadeInUp");
-// end scroll animation
-
+	// end scroll animation
 </script>
 
 </html>
