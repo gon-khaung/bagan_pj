@@ -57,50 +57,12 @@
 						</div>
 					</li>
 				</ul>
-				<ul class="navbar-nav ml-auto nav-flex-icons">
-					<li class="nav-item dropdown">
-						<a class="nav-link" id="navbarDropdownMenuLink-333" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#modalLoginForm">
-							<i class="fas fa-user-cog"></i>
-						</a>
-					</li>
-				</ul>
 			</div>
 			<!-- </div> -->
 		</nav>
 		<!--/.Navbar -->
 	</div>
 	<!-- End -->
-	<!-- admin sign in panel -->
-	<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header text-center">
-					<h4 class="modal-title w-100 font-weight-bold">Sign in to Admin panel</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body mx-3">
-					<div class="md-form mb-5">
-						<i class="fas fa-envelope prefix grey-text"></i>
-						<input type="email" id="defaultForm-email" class="form-control validate">
-						<label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
-					</div>
-
-					<div class="md-form mb-4">
-						<i class="fas fa-lock prefix grey-text"></i>
-						<input type="password" id="defaultForm-pass" class="form-control validate">
-						<label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
-					</div>
-
-				</div>
-				<div class="modal-footer d-flex justify-content-center">
-					<button class="btn btn-default">Login</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end admin sign in panel -->
 
 	@yield('content');
 
@@ -147,26 +109,33 @@
 
 					</div>
 					<div class="col-md-6 my-3">
-						<form>
+						<form action="{{route('contact')}}" method="post">
+							@csrf
+							@foreach ($errors->all() as $message)
+							
+							<div class="alert alert-danger" role="alert">
+							<span style="color:red;">{{$message}}</span>
+							</div>
+							@endforeach
 							<div class="form-group">
 								<!-- <label for="formGroupExampleInput">Example label</label> -->
-								<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Name">
+								<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Name" name="name">
 							</div>
 							<div class="form-group">
 								<!-- <label for="formGroupExampleInput2">Another label</label> -->
-								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Email">
+								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Your Email" name="email">
 							</div>
 							<div class="form-group">
 								<!-- <label for="formGroupExampleInput2">Another label</label> -->
-								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Telephone">
+								<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Telephone" name="telephone">
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleFormControlTextarea1">Comment</label> -->
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Address"></textarea>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Address" name="address"></textarea>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleFormControlTextarea1">Comment</label> -->
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message" name="message"></textarea>
 							</div>
 							<button type="submit" class="btn btn-primary">Send Message</button>
 						</form>

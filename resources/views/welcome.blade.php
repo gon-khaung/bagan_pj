@@ -259,11 +259,8 @@
                             <!-- <li><a href="./index-2.html">Home 2</a></li> -->
                         </ul>
                     </li>
-                    <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>
-                        </a>
-                        <ul aria-expanded="false">
+                    <li>
+                        <ul aria-expanded="true">
                             <li><a href="{{ route('layout_blank') }}">Blank</a></li>
                             <li><a href="{{ route('layout_one_column') }}">One Column</a></li>
                             <li><a href="{{ route('layout_two_column') }}">Two column</a></li>
@@ -272,8 +269,6 @@
                             <li><a href="{{ route('layout_horizontal') }}">Horizontal</a></li>
                             <li><a href="{{ route('layout_boxed') }}">Boxed</a></li>
                             <li><a href="{{ route('layout_wide') }}">Wide</a></li>
-                            
-                            
                             <li><a href="{{ route('layout_fixed_header') }}">Fixed Header</a></li>
                             <li><a href="{{ route('layout_fixed_sidebar') }}">Fixed Sidebar</a></li>
                         </ul>
@@ -287,6 +282,34 @@
                             <li><a href="{{ route('email_inbox') }}">Inbox</a></li>
                             <li><a href="{{ route('email_read') }}">Read</a></li>
                             <li><a href="{{ route('email_compose') }}">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label"><b>Pagodas</b></li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Pagoda</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('form_basic') }}">Add new Pagoda</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-label"><b>Hotels</b></li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Hotel</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('form_basic') }}">Add new Hotel</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label"><b>Articles</b></li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Article</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('form_basic') }}">Add new Article</a></li>
                         </ul>
                     </li>
                     <li>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <title>Bagan - Code-X</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Pignose Calender -->
@@ -14,26 +14,26 @@
     <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
-    <link href="./css/style.css" rel="stylesheet">
-    <link href="./plugins/summernote/dist/summernote.css" rel="stylesheet">
-    <link href="./plugins/jquery-steps/css/jquery.steps.css" rel="stylesheet">
-    <link href="./plugins/nestable/css/nestable.css" rel="stylesheet">
-    <link href="./plugins/sweetalert/css/sweetalert.css" rel="stylesheet">
-    <link href="./plugins/toastr/css/toastr.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./plugins/nouislider/nouislider.min.css">
-    <link rel="stylesheet" href="./plugins/highlightjs/styles/darkula.css">
-    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
-    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
-    <link href="./plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/summernote/dist/summernote.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/jquery-steps/css/jquery.steps.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/nestable/css/nestable.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/sweetalert/css/sweetalert.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/toastr/css/toastr.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('plugins/nouislider/nouislider.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/highlightjs/styles/darkula.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/chartist/css/chartist.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css')}}">
+    <link href="{{asset('plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet">
     <!-- Page plugins css -->
-    <link href="./plugins/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
+    <link href="{{asset('plugins/clockpicker/dist/jquery-clockpicker.min.css')}}" rel="stylesheet">
     <!-- Color picker plugins css -->
-    <link href="./plugins/jquery-asColorPicker-master/css/asColorPicker.css" rel="stylesheet">
+    <link href="{{asset('plugins/jquery-asColorPicker-master/css/asColorPicker.css')}}" rel="stylesheet">
     <!-- Date picker plugins css -->
-    <link href="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="{{asset('plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')}}" rel="stylesheet">
     <!-- Daterange picker plugins css -->
-    <link href="./plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
-    <link href="./plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="{{asset('plugins/timepicker/bootstrap-timepicker.min.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -61,13 +61,12 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
+        <div class="nav-header" style="background-color:#2d2e33">
             <div class="brand-logo">
                 <a href="{{route('index')}}">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="logo-compact"><img src="{{ asset('images/frontend/logo1.png') }}" style="width:100px" alt=""></span>
                     <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
+                        <img src="{{ asset('images/frontend/logo1.png') }}" style="width:100px" alt="">
                     </span>
                 </a>
             </div>
@@ -79,7 +78,7 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
+        <div class="header" style="background-color:#52d2b4">    
             <div class="header-content clearfix">
                 
                 <div class="nav-control">
@@ -87,7 +86,7 @@
                         <span class="toggle-icon"><i class="icon-menu"></i></span>
                     </div>
                 </div>
-                <div class="header-left">
+                <!-- <div class="header-left">
                     <div class="input-group icons">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
@@ -99,8 +98,8 @@
                             </form>
                         </div>
                     </div>
-                </div>
-                <div class="header-right">
+                </div> -->
+                <!-- <div class="header-right">
                     <ul class="clearfix">
                         <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
                                 <i class="mdi mdi-email-outline"></i>
@@ -236,7 +235,7 @@
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a href="{{ route('app_profile') }}"><i class="icon-user"></i> <span>Profile</span></a>
+                                            <a href=""><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
                                         <li>
                                             <a href="javascript:void()">
@@ -246,15 +245,15 @@
                                         
                                         <hr class="my-2">
                                         <li>
-                                            <a href="{{ route('page_lock') }}"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                            <a href=""><i class="icon-lock"></i> <span>Lock Screen</span></a>
                                         </li>
-                                        <li><a href="{{ route('page_login') }}"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href=""><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
         <!--**********************************
@@ -267,149 +266,32 @@
         <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
+                    <li class="nav-label"><b>Pagodas</b></li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Pagoda</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('index') }}">Home 1</a></li>
-                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
-                        </ul>
-                    </li>
-                    <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('layout_blank') }}">Blank</a></li>
-                            <li><a href="{{ route('layout_one_column') }}">One Column</a></li>
-                            <li><a href="{{ route('layout_two_column') }}">Two column</a></li>
-                            <li><a href="{{ route('layout_compact_nav') }}">Compact Nav</a></li>
-                            <li><a href="{{ route('layout_vertical') }}">Vertical</a></li>
-                            <li><a href="{{ route('layout_horizontal') }}">Horizontal</a></li>
-                            <li><a href="{{ route('layout_boxed') }}">Boxed</a></li>
-                            <li><a href="{{ route('layout_wide') }}">Wide</a></li>
+                            <li><a href="{{ route('add_pagoda') }}">Add new Pagoda</a></li>
                             
-                            
-                            <li><a href="{{ route('layout_fixed_header') }}">Fixed Header</a></li>
-                            <li><a href="{{ route('layout_fixed_sidebar') }}">Fixed Sidebar</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Apps</li>
+                    <li class="nav-label"><b>Hotels</b></li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Hotel</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('email_inbox') }}">Inbox</a></li>
-                            <li><a href="{{ route('email_read') }}">Read</a></li>
-                            <li><a href="{{ route('email_compose') }}">Compose</a></li>
+                            <li><a href="{{ route('add_hotel') }}">Add new Hotel</a></li>
                         </ul>
                     </li>
+                    <li class="nav-label"><b>Articles</b></li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Apps</span>
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Article</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('app_profile') }}">Profile</a></li>
-                            <li><a href="{{ route('app_calendar') }}">Calender</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Charts</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('chart_flot') }}">Flot</a></li>
-                            <li><a href="{{ route('chart_morris') }}">Morris</a></li>
-                            <li><a href="{{ route('chart_chartjs') }}">Chartjs</a></li>
-                            <li><a href="{{ route('chart_chartist') }}">Chartist</a></li>
-                            <li><a href="{{ route('chart_sparkline') }}">Sparkline</a></li>
-                            <li><a href="{{ route('chart_peity') }}">Peity</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">UI Components</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-grid menu-icon"></i><span class="nav-text">UI Components</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('ui_accordion') }}">Accordion</a></li>
-                            <li><a href="{{ route('ui_alert') }}">Alert</a></li>
-                            <li><a href="{{ route('ui_badge') }}">Badge</a></li>
-                            <li><a href="{{ route('ui_button') }}">Button</a></li>
-                            <li><a href="{{ route('ui_button_group') }}">Button Group</a></li>
-                            <li><a href="{{ route('ui_cards') }}">Cards</a></li>
-                            <li><a href="{{ route('ui_carousel') }}">Carousel</a></li>
-                            <li><a href="{{ route('ui_dropdown') }}">Dropdown</a></li>
-                            <li><a href="{{ route('ui_list_group') }}">List Group</a></li>
-                            <li><a href="{{ route('ui_media_object') }}">Media Object</a></li>
-                            <li><a href="{{ route('ui_modal') }}">Modal</a></li>
-                            <li><a href="{{ route('ui_pagination') }}">Pagination</a></li>
-                            <li><a href="{{ route('ui_popover') }}">Popover</a></li>
-                            <li><a href="{{ route('ui_progressbar') }}">Progressbar</a></li>
-                            <li><a href="{{ route('ui_tab') }}">Tab</a></li>
-                            <li><a href="{{ route('ui_typography') }}">Typography</a></li>
-                        <!-- </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-layers menu-icon"></i><span class="nav-text">Components</span>
-                        </a>
-                        <ul aria-expanded="false"> -->
-                            <li><a href="{{ route('uc_nestedable') }}">Nestedable</a></li>
-                            <li><a href="{{ route('uc_noui_slider') }}">Noui Slider</a></li>
-                            <li><a href="{{ route('uc_sweetalert') }}">Sweet Alert</a></li>
-                            <li><a href="{{ route('uc_toastr') }}">Toastr</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{ route('widgets') }}" aria-expanded="false">
-                            <i class="icon-badge menu-icon"></i><span class="nav-text">Widget</span>
-                        </a>
-                    </li>
-                    <li class="nav-label">Forms</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('form_basic') }}">Basic Form</a></li>
-                            <li><a href="{{ route('form_validation') }}">Form Validation</a></li>
-                            <li><a href="{{ route('form_step') }}">Step Form</a></li>
-                            <li><a href="{{ route('form_editor') }}">Editor</a></li>
-                            <li><a href="{{ route('form_picker') }}">Picker</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Table</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('table_basic') }}" aria-expanded="false">Basic Table</a></li>
-                            <li><a href="{{ route('table_datatable') }}" aria-expanded="false">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Pages</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('page_login') }}">Login</a></li>
-                            <li><a href="{{ route('page_register') }}">Register</a></li>
-                            <li><a href="{{ route('page_lock') }}">Lock Screen</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="{{ route('page_error_404') }}">Error 404</a></li>
-                                    <li><a href="{{ route('page_error_403') }}">Error 403</a></li>
-                                    <li><a href="{{ route('page_error_400') }}">Error 400</a></li>
-                                    <li><a href="{{ route('page_error_500') }}">Error 500</a></li>
-                                    <li><a href="{{ route('page_error_503') }}">Error 503</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{ route('add_article') }}">Add new Article</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -426,7 +308,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Code-X</a> 2020</p>
             </div>
         </div>
         <!--**********************************

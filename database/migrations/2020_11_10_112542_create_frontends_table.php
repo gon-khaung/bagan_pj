@@ -16,6 +16,7 @@ class CreateFrontendsTable extends Migration
         Schema::create('frontends', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->longtext('mytextarea');
         });
     }
 
