@@ -53,7 +53,7 @@ class BackendController extends Controller
     {
         $popin = Article::where('popular', '=', '1')->paginate(6);
         $data = Article::paginate(9);
-        return view('frontend.article', ['data' => $data, 'popin' => $popin]);
+        return view('Frontend.article', ['data' => $data, 'popin' => $popin]);
     }
     public function articles_category($id)
     {
@@ -70,7 +70,7 @@ class BackendController extends Controller
         } else {
             $data = Article::where('environmental', '=', '1')->paginate(6);
         }
-        return view('frontend.article', ['data' => $data, 'popin' => $popin]);
+        return view('Frontend.article', ['data' => $data, 'popin' => $popin]);
     }
     public function articles_archive($id)
     {
@@ -79,12 +79,12 @@ class BackendController extends Controller
         $end_date = '2020-'.$id.'-31';
         $data = Article::orderBy('date', 'desc')->whereBetween('date', [$start_date, $end_date])->paginate(6);
         // dd($data);
-        return view('frontend.article', ['data' => $data, 'popin' => $popin]);
+        return view('Frontend.article', ['data' => $data, 'popin' => $popin]);
     }
     public function show_articleSolo($id)
     {
         $data = Article::findOrFail($id);
-        return view('frontend.articleSolo', ['data'=>$data]);
+        return view('Frontend.articleSolo', ['data'=>$data]);
     }
     public function add_article()
     {
@@ -95,7 +95,7 @@ class BackendController extends Controller
     public function pagodas()
     {
         $data = Pagoda::paginate(9);
-        return view('frontend.pagoda', ['data' => $data]);
+        return view('Frontend.pagoda', ['data' => $data]);
     }
     public function add_pagoda()
     {
@@ -147,7 +147,7 @@ class BackendController extends Controller
             })
             ->select('pagodas.*', 'hotels.*')
             ->paginate('3');
-        return view('frontend.pagodaSolo', ['data' => $data, 'near_pagoda_data' => $users]);
+        return view('Frontend.pagodaSolo', ['data' => $data, 'near_pagoda_data' => $users]);
     }
     public function search_pagodas(Request $request)
     {
@@ -161,7 +161,7 @@ class BackendController extends Controller
             $data = Pagoda::paginate(6);
         }
         // dd($data);
-        return View('frontend.pagoda', ['data' => $data]);
+        return View('Frontend.pagoda', ['data' => $data]);
         //
     }
 
@@ -169,7 +169,7 @@ class BackendController extends Controller
     public function hotels()
     {
         $data = Hotel::paginate(9);
-        return view('frontend.hotel', ['data' => $data]);
+        return view('Frontend.hotel', ['data' => $data]);
     }
     public function add_hotel()
     {
@@ -222,7 +222,7 @@ class BackendController extends Controller
             })
             ->select('hotels.*', 'pagodas.*')
             ->paginate('3');
-        return view('frontend.hotelSolo', ['data' => $data, 'near_hotel_data' => $users]);
+        return view('Frontend.hotelSolo', ['data' => $data, 'near_hotel_data' => $users]);
     }
     public function show_ratingStar($id)
     {
@@ -235,11 +235,11 @@ class BackendController extends Controller
             $data = Hotel::where('rating_star', '=', $id)->paginate(9);
         }
         // dd($data);
-        return view('frontend.hotel', ['data' => $data]);
+        return view('Frontend.hotel', ['data' => $data]);
     }
     public function about()
     {
-        return view('frontend.about');
+        return view('Frontend.about');
     }
     public function contact(Request $request)
     {

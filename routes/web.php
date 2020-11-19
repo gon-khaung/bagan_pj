@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // admin dashboard
-Route::get('/index', function () {
-    return view('frontend.index');
+Route::get('/', function () {
+    return view('Frontend.index');
 })->name('index');
 
 // article
@@ -47,4 +47,6 @@ Route::get('/about', 'BackendController@about')->name('about');
 Route::post('/contact', 'BackendController@contact')->name('contact');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
