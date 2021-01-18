@@ -7,10 +7,21 @@ use App\Article;
 use App\Hotel;
 use App\Contact;
 use App\Pagoda;
+use App\User;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\UserResource;
 
 class ApiController extends Controller
 {
+
+    public function getUsers()
+    {
+        $data = User::all();
+        return response()->json(UserResource::collection($data));
+    }
+
+
+
     public function articles()
     {
         $data = Article::all();

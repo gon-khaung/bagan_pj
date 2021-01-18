@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/users','ApiController@getUsers');
+
+
 Route::get('/articles','ApiController@articles');
 Route::get('/hotels', 'ApiController@hotels');
 Route::get('/pagodas', 'ApiController@pagodas');
