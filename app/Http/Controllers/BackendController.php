@@ -16,6 +16,8 @@ class BackendController extends Controller
     //for article
     public function createArticle(Request $request)
     {
+
+        // dd($request);
         $first_photo = $request->file('first_photo');
         $first_photo_name = uniqid() . "_" . $first_photo->getClientOriginalName();
         $first_photo->move(public_path() . "/photos/articles/", $first_photo_name);
@@ -45,7 +47,6 @@ class BackendController extends Controller
         $data->local = $request->local;
         $data->global = $request->global;
         $data->environmental = $request->environmental;
-        // dd($data->date);
         $data->save();
         return back();
     }
